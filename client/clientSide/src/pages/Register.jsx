@@ -9,6 +9,7 @@ function Register() {
     username: "",
     email: "",
     password: "",
+    gender: "",
   });
 
   const handleChange = (e) => {
@@ -23,10 +24,9 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-   
     try {
       const res = await axios.post(
-        "http://localhost:7070/users/register",
+        "https://real-ruby-lemming-suit.cyclic.app/users/register",
         userDetails,
         {
           withCredentials: true,
@@ -45,6 +45,7 @@ function Register() {
         username: "",
         email: "",
         password: "",
+        gender: "",
       });
     } catch (error) {
       console.log(error);
@@ -85,7 +86,15 @@ function Register() {
           value={userDetails.password}
           required
         />
-
+        <label htmlFor="gender">Enter your gender </label>
+        <input
+          type="text"
+          name="gender"
+          id="gender"
+          onChange={handleChange}
+          value={userDetails.gender}
+          required
+        />
         <button type="submit">Register</button>
       </form>
     </div>

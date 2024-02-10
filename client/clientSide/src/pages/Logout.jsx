@@ -13,7 +13,7 @@ function Logout() {
         "access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
       const res = await axios.post(
-        "http://localhost:7070/users/logout",
+        "https://real-ruby-lemming-suit.cyclic.app/users/logout",
         {},
         {
           withCredentials: true,

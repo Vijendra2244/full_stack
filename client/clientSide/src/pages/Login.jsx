@@ -22,7 +22,7 @@ function Login() {
 
     try {
       const res = await axios.post(
-        "http://localhost:7070/users/login",
+        "https://real-ruby-lemming-suit.cyclic.app/users/login",
         userDetails,
         {
           withCredentials: true,
