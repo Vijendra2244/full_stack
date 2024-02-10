@@ -3,7 +3,6 @@ const PostModel = require("../models/post.models");
 const getPost = async (req, res) => {
   try {
     const query = req.query;
-
     const postData = await PostModel.find(query);
     res
       .status(200)
