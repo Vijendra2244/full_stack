@@ -20,6 +20,7 @@ app.use(
     origin: [
       "http://127.0.0.1:5173",
       "https://real-ruby-lemming-suit.cyclic.app",
+      "https://socialapp010101010.netlify.app"
     ],
     credentials: true,
   })
