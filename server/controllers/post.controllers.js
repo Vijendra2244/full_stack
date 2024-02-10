@@ -1,5 +1,4 @@
 const PostModel = require("../models/post.models");
-const UserModel = require("../models/user.models");
 
 const getPost = async (req, res) => {
   try {
@@ -14,7 +13,7 @@ const getPost = async (req, res) => {
   }
 };
 
-const createPost = async (res, res) => {
+const createPost = async (req, res) => {
   try {
     const postData = req.body;
     const post = new PostModel(postData);
