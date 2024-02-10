@@ -6,6 +6,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const connected = require("./db");
 const userRouter = require("./routes/user.routes");
+const postRouter = require("./routes/post.routes");
 
 const PORT = process.env.PORT;
 
@@ -15,7 +16,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://127.0.0.1:5173"],
+    origin: [
+      "http://127.0.0.1:5173",
+      "https://real-ruby-lemming-suit.cyclic.app",
+    ],
     credentials: true,
   })
 );
@@ -29,6 +33,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", userRouter);
+app.use("/posts", postRouter);
 
 app.listen(PORT, () => {
   try {
