@@ -6,7 +6,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const connected = require("./db");
 const userRouter = require("./routes/user.routes");
-const postRouter = require("./routes/post.routes");
+// const postRouter = require("./routes/post.routes");
 
 const PORT = process.env.PORT;
 
@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", userRouter);
-app.use("/posts", postRouter);
+// app.use("/posts", postRouter);
 
 app.listen(PORT, () => {
   try {
