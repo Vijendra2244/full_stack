@@ -3,10 +3,7 @@ const UserModel = require("../models/user.models");
 
 const getPost = async (req, res) => {
   try {
-    const userId = req.body.userId;
     const query = req.query;
-
-    const findUser = await UserModel.findById(userId);
 
     const postData = await PostModel.find(query);
     res
@@ -20,7 +17,7 @@ const getPost = async (req, res) => {
 const createPost = async (res, res) => {
   try {
     const postData = req.body;
-    const post = new PostModel(req.body);
+    const post = new PostModel(postData);
     await post.save();
     res
       .status(200)
