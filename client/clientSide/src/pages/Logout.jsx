@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 function Logout() {
+  const { auth, setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogout = async (e) => {
@@ -22,6 +24,7 @@ function Logout() {
 
       if (res.data.status === "success") {
         alert("User logged out successfully");
+        setAuth(false);
         navigate("/login");
       } else {
         alert("Logout failed");

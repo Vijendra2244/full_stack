@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 function Login() {
+  const { auth, setAuth } = useContext(AuthContext);
   const [userDetails, setUserDetails] = useState({
     email: "",
     password: "",
@@ -32,6 +34,7 @@ function Login() {
 
       if (res.data.status == "success") {
         alert("Login successfully");
+        setAuth(true);
         navigate("/");
       }
       setUserDetails({

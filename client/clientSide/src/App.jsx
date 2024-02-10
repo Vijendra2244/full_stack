@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import "./App.css";
 import AllRoutes from "./AllRoutes/AllRoutes";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
+  const { auth, setAuth } = useContext(AuthContext);
   return (
     <>
       <Link to="/">Home</Link>
